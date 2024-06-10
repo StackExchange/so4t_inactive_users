@@ -1,0 +1,7 @@
+user_id,verified_email,display_name,inactive_days,is_deactivated,reputation,answer_count,question_count,article_count,comment_count,down_vote_count,up_vote_count
+11,user1@company.com,Shreyas,297,TRUE,11,0,1,0,0,0,0
+5,user23@company.com,Jabed,243,TRUE,1,0,0,0,0,0,2
+6,user42@company.com,Josh,403,FALSE,1,0,0,0,0,0,0
+10,user7@company.com,Pedro,221,TRUE,1,0,0,0,0,0,2
+16,user77@company.com,Rob,269,TRUE,1,0,0,0,0,0,1
+19,user3000@company.com,Roger,216,TRUE,1,0,0,0,0,0,0
