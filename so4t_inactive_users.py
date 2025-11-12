@@ -1,5 +1,5 @@
 '''
-This Python script is a working proof of concept example of using Stack Overflow APIs for inactive user report. 
+This Python script is a working proof of concept example of using Stack Internal APIs for inactive user report. 
 If you run into difficulties, please leave feedback in the Github Issues.
 '''
 
@@ -57,24 +57,24 @@ def get_args():
     parser = argparse.ArgumentParser(
         prog='so4t_inactive_users.py',
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        description='Uses the Stack Overflow for Teams API to create \
+        description='Uses the Stack Internal API to create \
         a user report.',
-        epilog = 'Example for Stack Overflow Business: \n'
+        epilog = 'Example for Stack Internal (Business): \n'
                 'python3 so4t_inactive_users.py --url "https://stackoverflowteams.com/c/TEAM-NAME" '
                 '--token "YOUR_TOKEN" \n\n'
-                'Example for Stack Overflow Enterprise: \n'
+                'Example for Stack Internal (Enterprise): \n'
                 'python3 so4t_inactive_users.py --url "https://SUBDOMAIN.stackenterprise.co" '
                 '--key "YOUR_KEY"\n\n')
     
     parser.add_argument('--url', 
                         type=str,
-                        help='Base URL for your Stack Overflow for Teams instance. ')
+                        help='Base URL for your Stack Internal instance. ')
     parser.add_argument('--token',
                         type=str,
-                        help='API token for your Stack Overflow for Teams instance. ')
+                        help='API token for your Stack Internal instance. ')
     parser.add_argument('--key',
                     type=str,
-                    help='API key value. Required if using Stack Overflow Enterprise')
+                    help='API key value. Required if using Enterprise')
     parser.add_argument('--days',
                         type=int,
                         help='Only report on users that have been inactive by at least this many '
@@ -86,7 +86,7 @@ def get_args():
 
 def get_user_data(client):
 
-    if client.soe: # Stack Overflow Enterprise
+    if client.soe: # Stack Internal (Enterprise)
         filter_attributes = [
             'user.answer_count',
             'user.down_vote_count',
@@ -96,7 +96,7 @@ def get_user_data(client):
             'user.verified_email'
         ]
         filter_string = client.create_filter(filter_attributes)
-    else: # Stack Overflow Business
+    else: # Stack Internal Business or Basic
         filter_string = '!6WPIommaBqvw3'
 
     users = client.get_all_users(filter_string)
