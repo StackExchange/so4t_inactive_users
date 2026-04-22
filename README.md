@@ -11,7 +11,7 @@ A Python script that uses the Stack Internal API to create inactive user reporti
 
 ## Requirements
 * A Stack Internal instance (Basic, Business, or Enterprise)
-* Python 3.8 or higher ([download](https://www.python.org/downloads/))
+* Python 3.10 or higher ([download](https://www.python.org/downloads/))
 * Operating system: Linux, MacOS, or Windows
 
 
